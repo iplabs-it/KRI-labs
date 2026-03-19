@@ -70,6 +70,26 @@ git merge origin/<labN-topic>
 
 Each new lab adds its own directory — your previous work is not affected.
 
+## Lab Checkpoints & Submission
+
+Each lab has tasks that you should checkpoint as you complete them. The checkpoint system captures your router configurations, command history, and a VM fingerprint for integrity verification.
+
+**Creating a checkpoint** — run from inside the lab directory (e.g., `ospf/`):
+
+```bash
+bash ../common/checkpoint.sh task1
+```
+
+This saves a timestamped snapshot of all FRR router configs to `~/lab_checkpoints/<lab_name>/`. You can create multiple checkpoints as you progress through tasks (e.g., `task1`, `task2`, `task3_complete`).
+
+**Packaging for submission** — when you're done with all tasks:
+
+```bash
+bash ../common/package_submission.sh <lab_name>
+```
+
+For example: `bash ../common/package_submission.sh ospf`. This creates a `.tar.gz` archive in the current directory containing all your checkpoints. Submit this file according to your instructor's guidelines.
+
 ## Useful Commands
 
 | Action | Command |
@@ -81,3 +101,5 @@ Each new lab adds its own directory — your previous work is not affected.
 | Enter container shell | `sudo docker exec -it clab-<lab>-<node> bash` |
 | Show routing table | Inside vtysh: `show ip route` |
 | Live packet capture | `bash ../common/capture.sh clab-<lab>-<node> <iface>` |
+| Save a checkpoint | `bash ../common/checkpoint.sh <task_name>` |
+| Package submission | `bash ../common/package_submission.sh <lab_name>` |
