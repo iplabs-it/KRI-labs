@@ -9,7 +9,6 @@ Each lab provides a pre-configured network topology that students deploy as ligh
 | # | Branch | Topic | Status |
 |---|--------|-------|--------|
 | 1 | `lab1-ospf` | OSPF | Not yet released |
-| 2 | `lab2-isis` | IS-IS | Not yet released |
 
 Labs are released sequentially during the semester. When a lab becomes available, your instructor will let you know.
 
@@ -66,7 +65,7 @@ When the next lab is released, just pull and merge:
 ```bash
 cd ~/kri-labs
 git pull
-git merge origin/lab2-isis
+git merge origin/<labN-topic>
 ```
 
 Each new lab adds its own directory — your previous work is not affected.
