@@ -54,7 +54,6 @@ if [[ -f "$IDENTITY_FILE" ]]; then
         declare "$key=$value"
     done < "$IDENTITY_FILE"
 else
-    echo -e "${YELLOW}No identity file found - using VM fingerprint mode${NC}"
     group_id="unverified"
     students="anonymous"
     mode="fingerprint-only"
@@ -80,13 +79,15 @@ echo -e "${CYAN}╔════════════════════�
 echo -e "${CYAN}║           SUBMISSION PACKAGE CREATOR                       ║${NC}"
 echo -e "${CYAN}╚════════════════════════════════════════════════════════════╝${NC}"
 echo ""
-echo -e "Group ID    : ${GREEN}$group_id${NC}"
-echo -e "Students    : ${GREEN}${students//;/, }${NC}"
+if [[ "$group_id" != "unverified" ]]; then
+    echo -e "Group ID    : ${GREEN}$group_id${NC}"
+    echo -e "Students    : ${GREEN}${students//;/, }${NC}"
+fi
 echo -e "Lab         : ${GREEN}$LAB_NAME${NC}"
 echo -e "Checkpoints : ${GREEN}$CHECKPOINT_COUNT${NC}"
 if [[ "$mode" == "online" ]]; then
     echo -e "Identity    : ${GREEN}✓ Verified${NC}"
-else
+elif [[ "$group_id" != "unverified" ]]; then
     echo -e "Identity    : ${YELLOW}! Offline (unverified)${NC}"
 fi
 echo ""
