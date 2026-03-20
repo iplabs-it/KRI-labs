@@ -39,12 +39,12 @@ Router configurations are intentionally minimal — students configure OSPF them
 
 ```bash
 cd ~/kri-labs/ospf
-sudo containerlab deploy --topo ospf.clab.yml
-sudo docker exec -it clab-ospf-R1 vtysh
+containerlab deploy --topo ospf.clab.yml
+docker exec -it clab-ospf-R1 vtysh
 ```
 
 When done:
 
 ```bash
-sudo containerlab destroy --topo ospf.clab.yml
+containerlab destroy --topo ospf.clab.yml
 ```
