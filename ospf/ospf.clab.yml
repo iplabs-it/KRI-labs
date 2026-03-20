@@ -6,54 +6,49 @@ topology:
   nodes:
     R1:
       image: frr
-      memory: 70m
+      memory: 200m
       binds:
       - daemons:/etc/frr/daemons
       - R1.conf:/etc/frr/frr.conf
       exec:
       - ip route del 0.0.0.0/0
       - ip route del 172.20.20.0/24 dev eth0
-      - touch /etc/frr/vtysh.conf
     R2:
       image: frr
-      memory: 70m
+      memory: 200m
       binds:
       - daemons:/etc/frr/daemons
       - R2.conf:/etc/frr/frr.conf
       exec:
       - ip route del 0.0.0.0/0
       - ip route del 172.20.20.0/24 dev eth0
-      - touch /etc/frr/vtysh.conf
     R3:
       image: frr
-      memory: 70m
+      memory: 200m
       binds:
       - daemons:/etc/frr/daemons
       - R3.conf:/etc/frr/frr.conf
       exec:
       - ip route del 0.0.0.0/0
       - ip route del 172.20.20.0/24 dev eth0
-      - touch /etc/frr/vtysh.conf
     R4:
       image: frr
-      memory: 70m
+      memory: 200m
       binds:
       - daemons:/etc/frr/daemons
       - R4.conf:/etc/frr/frr.conf
       exec:
       - ip route del 0.0.0.0/0
       - ip route del 172.20.20.0/24 dev eth0
-      - touch /etc/frr/vtysh.conf
     R5:
       image: frr
-      memory: 70m
+      memory: 200m
       binds:
       - daemons:/etc/frr/daemons
       - R5.conf:/etc/frr/frr.conf
       exec:
       - ip route del 0.0.0.0/0
       - ip route del 172.20.20.0/24 dev eth0
-      - touch /etc/frr/vtysh.conf
     PC1:
       image: vpc
       memory: 30m
@@ -86,4 +81,3 @@ topology:
     - endpoints: ["R1:eth3", "PC1:eth1"]
     - endpoints: ["R5:eth3", "PC2:eth1"]
     - endpoints: ["R4:eth4", "PC3:eth1"]
-
