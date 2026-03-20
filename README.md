@@ -30,20 +30,20 @@ The labs are designed to run on a **Debian 12** virtual machine with Internet ac
 
    ```bash
    git pull
-   git merge origin/lab1-ospf
+   git merge --no-edit origin/lab1-ospf
    ```
 
 3. **Deploy the lab**:
 
    ```bash
    cd ospf
-   sudo containerlab deploy --topo ospf.clab.yml
+   containerlab deploy --topo ospf.clab.yml
    ```
 
 4. **Connect to a router** and configure it:
 
    ```bash
-   sudo docker exec -it clab-ospf-R1 vtysh
+   docker exec -it clab-ospf-R1 vtysh
    ```
 
 5. **Capture traffic** (optional) — use the helper script from `common/`:
@@ -55,7 +55,7 @@ The labs are designed to run on a **Debian 12** virtual machine with Internet ac
 6. **Destroy the lab** when done:
 
    ```bash
-   sudo containerlab destroy --topo ospf.clab.yml
+   containerlab destroy --topo ospf.clab.yml
    ```
 
 ## Getting the Next Lab
@@ -65,7 +65,7 @@ When the next lab is released, just pull and merge:
 ```bash
 cd ~/kri-labs
 git pull
-git merge origin/<labN-topic>
+git merge --no-edit origin/<labN-topic>
 ```
 
 Each new lab adds its own directory — your previous work is not affected.
@@ -94,11 +94,11 @@ For example: `bash ../common/package_submission.sh ospf`. This creates a `.tar.g
 
 | Action | Command |
 |---|---|
-| Deploy a lab | `sudo containerlab deploy --topo <file>.clab.yml` |
-| Destroy a lab | `sudo containerlab destroy --topo <file>.clab.yml` |
-| List running containers | `sudo containerlab inspect --topo <file>.clab.yml` |
-| Enter router CLI | `sudo docker exec -it clab-<lab>-<node> vtysh` |
-| Enter container shell | `sudo docker exec -it clab-<lab>-<node> bash` |
+| Deploy a lab | `containerlab deploy --topo <file>.clab.yml` |
+| Destroy a lab | `containerlab destroy --topo <file>.clab.yml` |
+| List running containers | `containerlab inspect --topo <file>.clab.yml` |
+| Enter router CLI | `docker exec -it clab-<lab>-<node> vtysh` |
+| Enter container shell | `docker exec -it clab-<lab>-<node> bash` |
 | Show routing table | Inside vtysh: `show ip route` |
 | Live packet capture | `bash ../common/capture.sh clab-<lab>-<node> <iface>` |
 | Save a checkpoint | `bash ../common/checkpoint.sh <task_name>` |
