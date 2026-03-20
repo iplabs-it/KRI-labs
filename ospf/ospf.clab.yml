@@ -13,6 +13,7 @@ topology:
       exec:
       - ip route del 0.0.0.0/0
       - ip route del 172.20.20.0/24 dev eth0
+      - touch /etc/frr/vtysh.conf
     R2:
       image: frr
       memory: 70m
@@ -22,6 +23,7 @@ topology:
       exec:
       - ip route del 0.0.0.0/0
       - ip route del 172.20.20.0/24 dev eth0
+      - touch /etc/frr/vtysh.conf
     R3:
       image: frr
       memory: 70m
@@ -31,6 +33,7 @@ topology:
       exec:
       - ip route del 0.0.0.0/0
       - ip route del 172.20.20.0/24 dev eth0
+      - touch /etc/frr/vtysh.conf
     R4:
       image: frr
       memory: 70m
@@ -40,6 +43,7 @@ topology:
       exec:
       - ip route del 0.0.0.0/0
       - ip route del 172.20.20.0/24 dev eth0
+      - touch /etc/frr/vtysh.conf
     R5:
       image: frr
       memory: 70m
@@ -49,6 +53,7 @@ topology:
       exec:
       - ip route del 0.0.0.0/0
       - ip route del 172.20.20.0/24 dev eth0
+      - touch /etc/frr/vtysh.conf
     PC1:
       image: vpc
       memory: 30m
