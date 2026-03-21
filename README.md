@@ -80,7 +80,7 @@ Each lab has tasks that you should checkpoint as you complete them. The checkpoi
 bash ../common/checkpoint.sh task1
 ```
 
-This saves a timestamped snapshot of all FRR router configs to `~/lab_checkpoints/<lab_name>/`. You can create multiple checkpoints as you progress through tasks (e.g., `task1`, `task2`, `task3_complete`).
+This saves a timestamped snapshot of all FRR router configs to `~/Checkpoints/<lab_name>/`. You can create multiple checkpoints as you progress through tasks (e.g., `task1`, `task2`, `task3_complete`).
 
 **Packaging for submission** — when you're done with all tasks:
 
