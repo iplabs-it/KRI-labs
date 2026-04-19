@@ -10,6 +10,7 @@ Each lab provides a pre-configured network topology that students deploy as ligh
 |---|--------|-------|--------|
 | 1 | `lab1-ospf` | OSPF | Released |
 | 2 | `lab2-isis` | IS-IS | Released |
+| 3 | `lab3-bgp1` | BGP (part 1) | Released |
 
 Labs are released sequentially during the semester. When a lab becomes available, your instructor will let you know.
 
