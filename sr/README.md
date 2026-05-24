@@ -64,7 +64,7 @@ says it's not running, or H11→H55 ping fails), it's a known intermittent FRR
 start-up glitch — fix it with:
 
 ```bash
-bash ~/KRI-labs/common/sr-recover.sh
+bash ~/KRI-labs/sr/sr-recover.sh
 ```
 
-See `~/KRI-labs/common/sr-recover.README.md` for details.
+See `~/KRI-labs/sr/sr-recover.README.md` for details.
