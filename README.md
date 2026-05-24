@@ -13,6 +13,7 @@ Each lab provides a pre-configured network topology that students deploy as ligh
 | 3 | `lab3-bgp1` | BGP (part 1) | Released |
 | 4 | `lab4-bgp2` | BGP (part 2) | Released |
 | 5 | `lab5-l3vpn` | MPLS L3VPN | Released |
+| 6 | `lab6-sr` | Segment Routing | Released |
 
 Labs are released sequentially during the semester. When a lab becomes available, your instructor will let you know.
 
