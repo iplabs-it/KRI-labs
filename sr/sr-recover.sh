@@ -9,7 +9,7 @@
 #
 # It is safe to run as many times as you like.
 #
-#   Usage:   bash ~/KRI-labs/common/sr-recover.sh
+#   Usage:   bash ~/KRI-labs/sr/sr-recover.sh
 # =============================================================================
 set -u
 PREFIX=clab-sr

@@ -28,7 +28,7 @@ docker exec clab-sr-R3 vtysh -c "show ip ospf neighbor"
 From a terminal on the lab VM:
 
 ```
-bash ~/KRI-labs/common/sr-recover.sh
+bash ~/KRI-labs/sr/sr-recover.sh
 ```
 
 It checks every router, restarts only the ones that didn't start, runs an H11→H55
@@ -43,7 +43,7 @@ is safe to run as many times as you like.
   cd ~/KRI-labs/sr
   containerlab destroy -t sr.clab.yml
   containerlab deploy  -t sr.clab.yml
-  bash ~/KRI-labs/common/sr-recover.sh
+  bash ~/KRI-labs/sr/sr-recover.sh
   ```
 - If you instead see a message about **“MPLS support disabled”**, that is a VM
   problem, not a router crash — this script won't fix it; tell your instructor.

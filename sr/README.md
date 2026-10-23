@@ -31,12 +31,37 @@ See **Figure 1** in the manual for the diagram. In short:
 - **Prefix-SIDs / node labels** (SRGB 16000–23999): `R1=16100, R2=16200, R3=16300, R4=16400, R5=16500`.
 - Interfaces inside a container: `eth0` = management; `eth1`, `eth2`, … = lab links.
 
+## Getting the lab
+
+Check whether a copy of the repository already exists on the VM:
+
+```bash
+ls -d ~/KRI-labs/.git
+```
+
+**Case A, the path is printed (repository already there):**
+
+```bash
+cd ~/KRI-labs
+git fetch
+git merge --no-edit origin/lab6-sr
+```
+
+**Case B, "No such file or directory" (no repository yet):**
+
+```bash
+cd ~
+git clone https://github.com/iplabs-it/KRI-labs.git
+cd KRI-labs
+git merge --no-edit origin/lab6-sr
+```
+
 ## Running the lab
 
 ```bash
 cd ~/KRI-labs/sr
-containerlab deploy  -t sr.clab.yml     # start the lab
-containerlab destroy -t sr.clab.yml     # tear it down
+containerlab deploy      # start the lab
+containerlab destroy     # tear it down
 ```
 
 Access a router CLI (industry-standard, Cisco-like):
@@ -68,3 +93,11 @@ bash ~/KRI-labs/sr/sr-recover.sh
 ```
 
 See `~/KRI-labs/sr/sr-recover.README.md` for details.
+
+**Task B2, SR policy in `R1.conf`:** do not give the policy a `name`. In FRR 10.5
+pathd aborts while reading a policy name from the configuration file (the same
+policy typed live in vtysh works), and with pathd dead nothing is steered. Use
+only `binding-sid` and `candidate-path` under the policy, as in the lecture.
+
+**Verifying a path:** `traceroute` does not show the MPLS hops (the Linux routers
+send no ICMP errors from inside the LSP), use `capture.sh` on the links instead.
