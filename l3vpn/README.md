@@ -67,15 +67,21 @@ The initial configuration provides OSPF on the backbone and basic IP addressing.
 
 ## Getting the Lab
 
-**If you already have KRI-labs:**
+Check whether a copy of the repository already exists on the VM:
+
+```bash
+ls -d ~/KRI-labs/.git
+```
+
+**Case A, the path is printed (repository already there):**
 
 ```bash
 cd ~/KRI-labs
-git pull
+git fetch
 git merge --no-edit origin/lab5-l3vpn
 ```
 
-**Starting on a new VM:**
+**Case B, "No such file or directory" (no repository yet):**
 
 ```bash
 cd ~
@@ -88,12 +94,19 @@ git merge --no-edit origin/lab5-l3vpn
 
 ```bash
 cd ~/KRI-labs/l3vpn
-containerlab deploy --topo l3vpn.clab.yml
+containerlab deploy
 docker exec -it clab-l3vpn-R1 vtysh
+```
+
+Checkpoint after each task and package at the end:
+
+```bash
+bash ~/KRI-labs/common/checkpoint.sh task1
+bash ~/KRI-labs/common/package_submission.sh l3vpn
 ```
 
 When done:
 
 ```bash
-containerlab destroy --topo l3vpn.clab.yml
+containerlab destroy
 ```
