@@ -74,7 +74,6 @@ topology:
       - sysctl -w net.mpls.conf.eth1.input=1
       - sysctl -w net.mpls.platform_labels=1048575
       - ip link add blue type vrf table 1
-      - ip link add red type vrf table 2
       - ip link set eth2 vrf blue
       - ip link set blue up
     CB1:
